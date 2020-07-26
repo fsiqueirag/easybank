@@ -28,7 +28,7 @@ body {
 .nav-outer-container {
     position: sticky;
     top: 0;
-    height: 12vh;
+    height: 80px;
     width: 100vw;
     background-color: white;
     z-index: 2;
@@ -38,7 +38,7 @@ body {
     position: sticky;
     top: 0;
     display: flex;
-    height: 12vh;
+    height: 80px;
     width: 1000px;
     margin: 0 auto;
     justify-content: space-between;
@@ -400,9 +400,6 @@ button:hover {
     }
     .menu-icon {
         display: block;
-        position: absolute;
-        right: 0.8rem;
-        top: 0.8rem;
     }
     .about-container {
         width: 600px;
@@ -523,4 +520,71 @@ button:hover {
         top: -50px;
         right: 0;
     }
+}
+
+/* POPUP */
+
+.modal-parent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+
+.modal {
+    background: var(--neutral3);
+    width: 70%;
+    padding: 2rem;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    position: relative;
+    animation: 1s drop;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal a {
+    padding: 0;
+    height: auto;
+    line-height: 1.5rem;
+}
+.modal a:hover {
+    border-bottom: 0;
+}
+@keyframes drop {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    100% {
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+.X {
+    position: absolute;
+    padding: 0.1rem 0.5rem;
+    right: 5px;
+    top: 5px;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.X:hover {
+    background-color: var(--neutral1);
+}
+
+section {
+    transition: all 1s ease-in;
 }
